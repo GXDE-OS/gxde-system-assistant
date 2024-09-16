@@ -1,12 +1,12 @@
-Source: sysbro
+Source: gxde-system-assistant
 Section: utils
 Priority: optional
 Maintainer: Rekols <rekols@foxmail.com>
-Build-Depends: debhelper (>= 9), pkg-config, libqt5widgets5, libdtkcore-dev, libdtkwidget-dev, qt5-default, qttools5-dev-tools, libsensors4-dev, libpci-dev
+Build-Depends: debhelper (>= 9), pkg-config, libqt5widgets5, libdtkcore2-dev, libdtkwidget2-dev, qt5-default | qtchooser, qttools5-dev-tools, libsensors4-dev, libpci-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
-Package: sysbro
+Package: gxde-system-assistant
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Sysbro is a system assistant for deepin.
+Description: A system assistant for GXDE
