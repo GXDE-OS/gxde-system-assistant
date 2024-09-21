@@ -1,7 +1,7 @@
-sysbro (0.8) unstable; urgency=medium
+gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节
 
- -- Rekols <rekols@protonmail.com> Thu, 29 Aug 2019 20:01:30 +0800
+ -- shenmo <shenmo@spark-app.store> Thu, 29 Aug 2019 20:01:30 +0800
 
 sysbro (0.7) unstable; urgency=medium
   * 修复首页显示进程数不正确

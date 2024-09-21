@@ -80,3 +80,7 @@ install(FILES sysbro-express.desktop DESTINATION share/applications)
 install(FILES sysbro-file-shredder.desktop DESTINATION share/applications)
 install(FILES sysbro-network-test.desktop DESTINATION share/applications)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)
+
+# Install GXDE file
+
+install(FILES src/resources/gxde-system-assistant DESTINATION bin/)

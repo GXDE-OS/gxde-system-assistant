@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     a.loadTranslator();
     a.setOrganizationName("deepin");
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
-    a.setApplicationAcknowledgementPage("https://github.com/rekols");
+    a.setApplicationAcknowledgementPage("https://gitee.com/shenmo7192/");
     a.setProductIcon(QIcon(":/resources/sysbro.svg"));
     a.setProductName("Sysbro");
     a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more..."));

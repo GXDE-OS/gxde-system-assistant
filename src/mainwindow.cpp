@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
     setFixedSize(800, 560);
+    setWindowFlags( (windowFlags() | Qt::CustomizeWindowHint) & ~Qt::WindowMaximizeButtonHint); // https://segmentfault.com/q/1010000042762264 最大化按钮隐藏
     initTrayIcon();
     // setMinimumSize(800, 560);
     // resize(800, 560);
