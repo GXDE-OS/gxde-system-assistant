@@ -31,12 +31,14 @@ void ToolsItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
     int iconSize = 70;
     int iconLeftMargin = (rect.width() - iconSize) / 2;
     double iconTopMargin = rect.height() * 0.2 - iconSize * 0.3;
-    QString iconName = QString(":/resources/%1.svg").arg(index.data(ToolsListModel::AppKeyRole).toString());
+    /*QString iconName = QString(":/resources/%1.svg").arg(index.data(ToolsListModel::AppKeyRole).toString());
     if (!QFile(iconName).exists()) {
         iconName = ":/resources/sysbro.svg";
-    }
+    }*/
     QRect iconRect = QRect(rect.topLeft() + QPoint(iconLeftMargin, iconTopMargin), QSize(iconSize, iconSize));
-    QPixmap iconPixmap = Utils::renderSVG(iconName, QSize(iconSize, iconSize));
+    //QPixmap iconPixmap = Utils::renderSVG(iconName, QSize(iconSize, iconSize));
+    QIcon icon = index.data(ToolsListModel::IconRole).value<QIcon>();
+    QPixmap iconPixmap = icon.pixmap(QSize(512, 512));
     painter->drawPixmap(iconRect, iconPixmap);
 
     QTextOption appNameOption;

@@ -35,8 +35,10 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
 find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5Gui REQUIRED)
+#find_package(Qt5Xdg REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(DtkCore REQUIRED)
+PKG_SEARCH_MODULE(Qt5Xdg REQUIRED Qt5Xdg)
 
 # Tell CMake to create the executable
 add_executable(sysbro ${SRCS} src/resources.qrc)
@@ -47,6 +49,7 @@ target_link_libraries(sysbro
     ${Qt5Widgets_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
+    ${Qt5Xdg_LIBRARIES}
 )
 
 set(CMAKE_INSTALL_PREFIX /usr)
@@ -80,6 +83,11 @@ install(FILES sysbro-express.desktop DESTINATION share/applications)
 install(FILES sysbro-file-shredder.desktop DESTINATION share/applications)
 install(FILES sysbro-network-test.desktop DESTINATION share/applications)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)
+
+install(FILES sysbro-express.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-file-shredder.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-network-test.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-startup-apps.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
 
 # Install GXDE file
 

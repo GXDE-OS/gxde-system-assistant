@@ -11,7 +11,8 @@ public:
     enum DataRole {
         AppNameRole,
         AppKeyRole,
-        CurrentIndexRole
+        CurrentIndexRole,
+        IconRole
     };
 
     explicit ToolsListModel(QObject *parent = nullptr);
@@ -22,6 +23,7 @@ public:
 
 private:
     QStringList m_list;
+    QList<QIcon> m_icon;
     QModelIndex m_currentIndex;
     QMap<QString, QString> m_nameMap;
 };

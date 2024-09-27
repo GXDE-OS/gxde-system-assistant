@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
     a.setApplicationAcknowledgementPage("https://gitee.com/shenmo7192/");
     a.setProductIcon(QIcon(":/resources/sysbro.svg"));
     a.setProductName("Sysbro");
-    a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more..."));
+    a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more...")
+                                + "                                                                                                             ");
 
     if (!a.setSingleInstance("assistant")) {
         return 0;
