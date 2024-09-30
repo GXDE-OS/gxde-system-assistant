@@ -42,15 +42,17 @@ HomePage::HomePage(QWidget *parent)
     DLinkButton *btn = new DLinkButton("立即测速");
     QLabel *tipsLabel = new QLabel("测速前请关闭占用网络资源的软件");
 
-    m_comboBox->addItem("百度服务器");
-    m_comboBox->addItem("阿里服务器");
-    m_comboBox->addItem("腾讯服务器");
+    m_comboBox->addItem("服务器1");
+    m_comboBox->addItem("服务器2");
+    m_comboBox->addItem("服务器3");
+    m_comboBox->addItem("服务器4（国外，国内可能无法连接）");
+    m_comboBox->addItem("服务器5（国外，国内可能无法连接）");
     m_comboBox->setFocusPolicy(Qt::NoFocus);
 
     if (m_settings->contains("server_index")) {
         m_comboBox->setCurrentIndex(m_settings->value("server_index").toInt());
     } else {
-        m_settings->setValue("server_index", QVariant(2));
+        m_settings->setValue("server_index", QVariant(0));
     }
 
     layout->addSpacing(15);

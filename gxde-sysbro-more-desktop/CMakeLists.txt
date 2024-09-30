@@ -1,0 +1,1 @@
+install(FILES spark-store.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)

@@ -41,6 +41,10 @@ ToolsListModel::ToolsListModel(QObject *parent)
                 // 否则不显示
                 continue;
             }
+            // 检测 TryExec 一栏，如果指定的文件不存在则跳过显示
+            if (!desktopFile.value("TryExec").isNull() && !desktopFile.tryExec()) {
+                continue;
+            }
             m_list << desktopFile.value("Exec").toString();
             m_nameMap.insert(desktopFile.value("Exec").toString(),
                              desktopFile.name());

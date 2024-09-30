@@ -34,7 +34,7 @@ void NetworkManager::startTest(int server_index)
     switch (server_index) {
     case 0:
         // 百度服务器
-        m_realUrl = "http://bos.nj.bpc.baidu.com/v1/baiduplayer/player/BaiduPlayer5Setup_5.exe";
+        m_realUrl = "https://47d25d-1905179964.antpcdn.com:19001/b/pkg-ant.baidu.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.44.6.1.exe";
         break;
     case 1:
         // 阿里服务器
@@ -42,7 +42,15 @@ void NetworkManager::startTest(int server_index)
         break;
     case 2:
         // 腾讯服务器
-        m_realUrl = "https://dldir1.qq.com/qqfile/qq/PCQQ9.1.5/25530/QQ9.1.5.25530.exe";
+        m_realUrl = "https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.12_240927_amd64_01.deb";
+        break;
+    case 3:
+        // Sourceforge 服务器
+        m_realUrl = "https://sourceforge.net/projects/deep-wine-runner-wine-download/files/wine-ce-8.13-amd64/wine-ce-8.13-amd64.7z/download";
+        break;
+    case 4:
+        // Github 服务器
+        m_realUrl = "https://github.com/gfdgd-xi/deep-wine-runner/releases/download/4.1.0.0/spark-deepin-wine-runner_4.1.0.0_all.deb";
         break;
     default:
         m_realUrl = "";

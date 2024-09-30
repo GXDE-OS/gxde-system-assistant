@@ -60,6 +60,7 @@ add_subdirectory("sysbro-express")
 add_subdirectory("sysbro-file-shredder")
 add_subdirectory("sysbro-network-test")
 add_subdirectory("sysbro-startup-apps")
+add_subdirectory("gxde-sysbro-more-desktop")
 
 # Install qm files
 file(GLOB QM_FILES "src/translations/*.qm")
