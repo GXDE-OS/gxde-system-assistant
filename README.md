@@ -1,26 +1,24 @@
-# Sysbro
+# GXDE System Assistant
 
-A system assistant for deepin/Ubuntu18.10.
+A system assistant for GXDE 15 , based on sysbro
 
 ![](screenshots/20190327025127.png)
 
-[Downloads](https://github.com/rekols/sysbro/releases)
+## Add Plugin
 
-## Dependencies
+Install your standard `.desktop` file to `/usr/share/gxde/gxde-system-assistant/tool-extensions` to show in GXDE System assistant tools page
 
-* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev
+## Developing
 
-## Build
+### Dependencies
 
-* mkdir build
-* cd build
-* qmake ..
-* make
+* mk-build-deps (need devscripts installed) and install the generated deb file. 
 
-## Build a deb package
+### Build
 
-* dpkg-buildpackage -b
+* dpkg-buildpackage -us -uc -b
 
-## License
 
-sysbro is licensed under GPLv3.
+### License
+
+GXDE System Assistant is licensed under GPLv3.
