@@ -1,8 +1,8 @@
-gxde-system-assistant (0.8.3) UNRELEASED; urgency=medium
+gxde-system-assistant (0.8.4) UNRELEASED; urgency=medium
 
   * 支持工具箱板块增加内容（插件）
 
- -- gfdgd_xi <3025613752@qq.com>  Mon, 30 Sep 2024 23:01:37 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 01 Oct 2024 19:05:06 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节
