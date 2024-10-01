@@ -111,8 +111,9 @@ void MainWindow::replyFinished(QNetworkReply *reply)
         contentBox->setPlainText("请检查您的网络");
         return;
     }
-
-    QJsonObject data = QJsonDocument::fromJson(reply->readAll()).object();
+    QByteArray data1 = reply->readAll();
+    qDebug() << data1;
+    QJsonObject data = QJsonDocument::fromJson(data1).object();
 
     int value = data.value("status").toString().toInt();
 
