@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=GXDE Sysbro
-Name[zh_CN]=极星系统助手
+Name=GXDE System Assistant
+Name[zh_CN]=GXDE 系统助手
 Exec=gxde-system-assistant
 Comment=A GXDE assistant
 Icon=sysbro
