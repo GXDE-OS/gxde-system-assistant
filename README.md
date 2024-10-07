@@ -6,7 +6,7 @@ A system assistant for GXDE 15 , based on sysbro
 
 ## Add Plugin
 
-Install your standard `.desktop` file to `/usr/share/gxde/gxde-system-assistant/tool-extensions` to show in GXDE System assistant tools page
+Install your standard `.desktop` file to `/usr/share/GXDE/gxde-system-assistant/tool-extensions` to show in GXDE System assistant tools page
 
 ## Developing
 

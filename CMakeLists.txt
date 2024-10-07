@@ -86,9 +86,9 @@ install(FILES sysbro-network-test.desktop DESTINATION share/applications)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)
 
 #install(FILES sysbro-express.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
-install(FILES sysbro-file-shredder.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
-install(FILES sysbro-network-test.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
-install(FILES sysbro-startup-apps.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-file-shredder.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-network-test.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-startup-apps.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 
 # Install GXDE file
 

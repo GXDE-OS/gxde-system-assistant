@@ -10,9 +10,9 @@ ToolsListModel::ToolsListModel(QObject *parent)
       m_currentIndex(QModelIndex())
 {
     QStringList readPath;
-    readPath << "/usr/share/gxde/gxde-system-assistant/tool-extensions/"
+    readPath << "/usr/share/GXDE/gxde-system-assistant/tool-extensions/"
              << QCoreApplication::applicationDirPath() + "/tool-extensions/"
-             << QDir::homePath() + "/.config/gxde/gxde-system-assistant/tool-extensions/";
+             << QDir::homePath() + "/.config/GXDE/gxde-system-assistant/tool-extensions/";
     // << "/usr/share/applications/"
     // << QDir::homePath() + "/.local/share/applications/"
     for (QString j: readPath) {
