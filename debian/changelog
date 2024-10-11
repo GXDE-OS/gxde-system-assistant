@@ -1,7 +1,8 @@
-gxde-system-assistant (0.8.4.1) UNRELEASED; urgency=medium
+gxde-system-assistant (0.8.4.2) UNRELEASED; urgency=medium
 
   * 支持工具箱板块增加内容（插件）
   * 插件目录改大写
+  * 推荐 deepin-clone
 
  -- gfdgd_xi <3025613752@qq.com>  Tue, 01 Oct 2024 19:05:06 +0800
 

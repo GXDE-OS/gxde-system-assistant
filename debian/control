@@ -9,5 +9,5 @@ Homepage: https://gitee.com/GXDE-OS/gxde-system-assistant
 Package: gxde-system-assistant
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: gxde-timer
+Recommends: gxde-timer,deepin-clone
 Description: Sysbro is a system assistant for GXDE.
