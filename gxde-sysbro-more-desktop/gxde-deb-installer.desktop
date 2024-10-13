@@ -13,6 +13,6 @@ TryExec=gxde-deb-installer
 
 # Translations:
 # Do not manually modify!
-Name=Installl deb packages
+Name=Installl deb package
 Name[zh_CN]=安装 deb 包
 

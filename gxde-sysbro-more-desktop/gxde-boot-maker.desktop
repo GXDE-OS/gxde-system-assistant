@@ -4,7 +4,7 @@ Comment=A tool to make boot disk for GXDE OS
 Exec=gxde-boot-maker
 GenericName=Boot Maker
 Icon=gxde-boot-maker
-Name=制作系统启动盘
+Name=Create Bootable USB
 StartupNotify=true
 Terminal=false
 Type=Application
@@ -12,5 +12,5 @@ Version=1.0
 X-GXDE-Vendor=deepin
 TryExec=gxde-boot-maker
 
-Name[zh_CN]=制作系统启动盘
+Name[zh_CN]=制作启动盘
 

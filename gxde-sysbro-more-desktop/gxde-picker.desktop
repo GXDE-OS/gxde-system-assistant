@@ -4,12 +4,12 @@ Comment=Color picker
 Exec=gxde-picker
 GenericName=Picker
 Icon=gxde-picker
-Name=取色器（Ctrl+Alt+V）
+Name=Pick Color
 StartupNotify=true
 TryExec=gxde-picker
 Type=Application
 X-GXDE-Vendor=GXDE
 
-Name[zh_CN]=取色器（Ctrl+Alt+V）
+Name[zh_CN]=屏幕取色
 
 
