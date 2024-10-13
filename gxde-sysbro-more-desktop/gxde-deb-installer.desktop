@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=System;
+Comment=GXDE Package Manager is used to help users install and remove local package, supports bulk install.
+Exec=gxde-deb-installer %F
+GenericName=Package Manager
+Icon=gxde-deb-installer
+MimeType=application/vnd.debian.binary-package;application/x-deb;
+StartupNotify=true
+Terminal=false
+Type=Application
+X-GXDE-Vendor=GXDE
+TryExec=gxde-deb-installer
+
+# Translations:
+# Do not manually modify!
+Name=Installl deb packages
+Name[zh_CN]=安装 deb 包
+

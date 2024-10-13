@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=GNOME;GTK;DDE;Utility;System;TerminalEmulator;
+Comment=Use the command line
+Exec=gxde-terminal
+GenericName=Terminal 
+Icon=gxde-terminal
+Keywords=shell;prompt;command;commandline;
+Name=打开终端
+StartupNotify=true
+TryExec=gxde-terminal
+Type=Application
+X-GXDE-Vendor=GXDE

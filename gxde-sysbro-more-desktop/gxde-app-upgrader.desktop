@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Categories=System;
+Exec=gxde-app-upgrader
+Icon=system-updated
+Name=更新系统
+Name[zh_CN]=更新系统
+Keywords=appstore;
+Terminal=false
+StartupNotify=true
+TryExec=gxde-app-upgrader
+MimeType=x-scheme-handler/spk

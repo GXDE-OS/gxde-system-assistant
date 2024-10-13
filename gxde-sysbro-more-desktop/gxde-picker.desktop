@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Graphics;Picker;
+Comment=Color picker
+Exec=gxde-picker
+GenericName=Picker
+Icon=gxde-picker
+Name=取色器（Ctrl+Alt+V）
+StartupNotify=true
+TryExec=gxde-picker
+Type=Application
+X-GXDE-Vendor=GXDE
+
+Name[zh_CN]=取色器（Ctrl+Alt+V）
+
+

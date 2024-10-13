@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Application;System;Settings
+Comment=Deepin Desktop Environment Control Center
+Encoding=UTF-8
+Exec=dde-control-center -s
+Icon=preferences-system
+Name=Control Center
+Name[zh_CN]=控制中心
+OnlyShowIn=Deepin
+StartupNotify=false
+Terminal=false
+Type=Application
+TryExec=dde-control-center
+X-MultipleArgs=false
