@@ -13,4 +13,5 @@ Recommends:
  gxde-timer,
  deepin-clone,
  gxde-kernel-manager,
+ gxde-easteregg-yunli,
 Description: Sysbro is a system assistant for GXDE.
