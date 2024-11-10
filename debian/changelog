@@ -1,10 +1,11 @@
-gxde-system-assistant (0.8.4.5) UNRELEASED; urgency=medium
+gxde-system-assistant (0.8.4.6) UNRELEASED; urgency=medium
 
   * 支持工具箱板块增加内容（插件）
   * 插件目录改大写
   * 推荐 deepin-clone、gxde-kernel-manager
   * 新增更多入口，调整文案为动作名
   * Add Yunli EasterEgg
+  * Add Autotrash
 
  -- gfdgd_xi <3025613752@qq.com>  Sun, 13 Oct 2024 11:05:58 +0800
 
