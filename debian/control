@@ -8,6 +8,8 @@ Homepage: https://gitee.com/GXDE-OS/gxde-system-assistant
 
 Package: gxde-system-assistant
 Architecture: any
+Conflicts: sysbro
+Replaces: sysbro
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: 
  gxde-timer,
