@@ -279,20 +279,15 @@
     </message>
 </context>
 <context>
-    <name>ToolsListModel</name>
+    <name>ToolsPage</name>
     <message>
-        <location filename="../toolslistmodel.cpp" line="12"/>
-        <source>App start-up management</source>
+        <location filename="../toolspage.cpp" line="37"/>
+        <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../toolslistmodel.cpp" line="13"/>
-        <source>File Shredder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../toolslistmodel.cpp" line="16"/>
-        <source>Hardware Info</source>
+        <location filename="../toolspage.cpp" line="38"/>
+        <source>Send to desktop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

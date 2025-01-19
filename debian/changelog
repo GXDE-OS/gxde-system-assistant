@@ -1,4 +1,4 @@
-gxde-system-assistant (0.9.0) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.1) UNRELEASED; urgency=medium
 
   * 支持工具箱板块增加内容（插件）
   * 插件目录改大写
@@ -7,8 +7,9 @@ gxde-system-assistant (0.9.0) UNRELEASED; urgency=medium
   * Add Yunli EasterEgg
   * Add Autotrash
   * 工具箱支持发送快捷方式至桌面（https://gitee.com/GXDE-OS/GXDE/issues/IBC8QS）
+  * 补充中文翻译
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 19 Jan 2025 16:36:29 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 19 Jan 2025 16:44:48 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节

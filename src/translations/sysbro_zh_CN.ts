@@ -300,19 +300,25 @@
 <context>
     <name>ToolsListModel</name>
     <message>
-        <location filename="../toolslistmodel.cpp" line="12"/>
         <source>App start-up management</source>
-        <translation>开机自启动管理</translation>
+        <translation type="vanished">开机自启动管理</translation>
     </message>
     <message>
-        <location filename="../toolslistmodel.cpp" line="13"/>
         <source>File Shredder</source>
-        <translation>文件粉碎机</translation>
+        <translation type="vanished">文件粉碎机</translation>
+    </message>
+</context>
+<context>
+    <name>ToolsPage</name>
+    <message>
+        <location filename="../toolspage.cpp" line="37"/>
+        <source>Open</source>
+        <translation>打开</translation>
     </message>
     <message>
-        <location filename="../toolslistmodel.cpp" line="16"/>
-        <source>Hardware Info</source>
-        <translation type="unfinished"></translation>
+        <location filename="../toolspage.cpp" line="38"/>
+        <source>Send to desktop</source>
+        <translation>发送至桌面</translation>
     </message>
 </context>
 <context>
