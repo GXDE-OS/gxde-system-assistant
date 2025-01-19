@@ -4,6 +4,7 @@
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QMenu>
+#include <QStandardPaths>
 
 ToolsPage::ToolsPage(QWidget *parent)
     : QWidget(parent),
@@ -31,10 +32,23 @@ ToolsPage::ToolsPage(QWidget *parent)
 
 void ToolsPage::showMenu(QPoint point)
 {
+    m_menuMousePoint = QCursor::pos();
     QMenu menu(this);
     QAction open(tr("Open"));
+    QAction sendToDesktop(tr("Send to desktop"));
+
     menu.addAction(&open);
-    menu.exec(QCursor::pos());
+    menu.addSeparator();
+    menu.addAction(&sendToDesktop);
+
+    connect(&open, &QAction::triggered, this, [this, point](){
+        handleViewClicked(m_toolsView->indexAt(point));
+    });
+    connect(&sendToDesktop, &QAction::triggered, this, [this, point](){
+        sendFileToDesktop(m_toolsView->indexAt(point));
+    });
+
+    menu.exec(m_menuMousePoint);
 }
 
 void ToolsPage::leaveEvent(QEvent *e)
@@ -44,9 +58,19 @@ void ToolsPage::leaveEvent(QEvent *e)
     m_listModel->setCurrentIndex(QModelIndex());
 }
 
+bool ToolsPage::sendFileToDesktop(QModelIndex idx)
+{
+    QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    QString desktopFilePath = idx.data(ToolsListModel::DesktopFilePath).toString();
+    QFileInfo desktopFileInfo(desktopFilePath);
+    qDebug() << desktopPath + desktopFileInfo.fileName();
+    return QFile::copy(desktopFilePath, desktopPath + "/" + desktopFileInfo.fileName());
+}
+
 void ToolsPage::handleViewClicked(QModelIndex idx)
 {
     // startup application.
     QString appExec = idx.data(ToolsListModel::AppKeyRole).toString();
+    qDebug() << appExec;
     QProcess::startDetached(appExec);
 }

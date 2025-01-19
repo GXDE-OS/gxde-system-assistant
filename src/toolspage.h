@@ -16,10 +16,12 @@ public:
 
 private:
     void handleViewClicked(QModelIndex idx);
+    bool sendFileToDesktop(QModelIndex idx);
     void showMenu(QPoint point);
 
 private:
     ToolsView *m_toolsView;
+    QPoint m_menuMousePoint;
     ToolsListModel *m_listModel;
 
 };

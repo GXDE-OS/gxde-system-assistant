@@ -51,6 +51,7 @@ ToolsListModel::ToolsListModel(QObject *parent)
             QIcon icon = desktopFile.icon();
             QString iconStr = desktopFile.iconName();
             m_icon.append(iconStr.isEmpty() ? QIcon(":/resources/sysbro.svg") : icon);
+            m_desktopFilePath.append(j + i);
         }
     }
 }
@@ -75,6 +76,8 @@ QVariant ToolsListModel::data(const QModelIndex &index, int role) const
         return index == m_currentIndex;
     case IconRole:
         return m_icon.at(row);
+    case DesktopFilePath:
+        return m_desktopFilePath.at(row);
     }
 
     return QVariant();

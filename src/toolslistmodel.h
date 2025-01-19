@@ -2,6 +2,8 @@
 #define TOOLSLISTMODEL_H
 
 #include <QAbstractListModel>
+#include <QCoreApplication>
+#include <QDir>
 
 class ToolsListModel : public QAbstractListModel
 {
@@ -12,7 +14,8 @@ public:
         AppNameRole,
         AppKeyRole,
         CurrentIndexRole,
-        IconRole
+        IconRole,
+        DesktopFilePath
     };
 
     explicit ToolsListModel(QObject *parent = nullptr);
@@ -22,6 +25,7 @@ public:
     void setCurrentIndex(QModelIndex idx);
 
 private:
+    QStringList m_desktopFilePath;
     QStringList m_list;
     QList<QIcon> m_icon;
     QModelIndex m_currentIndex;
