@@ -38,7 +38,7 @@ void ToolsItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
     QRect iconRect = QRect(rect.topLeft() + QPoint(iconLeftMargin, iconTopMargin), QSize(iconSize, iconSize));
     //QPixmap iconPixmap = Utils::renderSVG(iconName, QSize(iconSize, iconSize));
     QIcon icon = index.data(ToolsListModel::IconRole).value<QIcon>();
-    QPixmap iconPixmap = icon.pixmap(QSize(512, 512));
+    QPixmap iconPixmap = icon.pixmap(QSize(iconSize, iconSize));
     painter->drawPixmap(iconRect, iconPixmap);
 
     QTextOption appNameOption;

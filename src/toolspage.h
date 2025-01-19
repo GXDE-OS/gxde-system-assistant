@@ -16,10 +16,12 @@ public:
 
 private:
     void handleViewClicked(QModelIndex idx);
+    void showMenu(QPoint point);
 
 private:
     ToolsView *m_toolsView;
     ToolsListModel *m_listModel;
+
 };
 
 #endif // TOOLSPAGE_H

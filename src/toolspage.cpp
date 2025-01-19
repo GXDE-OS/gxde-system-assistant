@@ -3,6 +3,7 @@
 #include <QProcess>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QMenu>
 
 ToolsPage::ToolsPage(QWidget *parent)
     : QWidget(parent),
@@ -22,9 +23,18 @@ ToolsPage::ToolsPage(QWidget *parent)
     // m_toolsView->setWrapping(true);
 
     setLayout(layout);
-
+    m_toolsView->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(m_toolsView, &QListView::entered, m_listModel, &ToolsListModel::setCurrentIndex);
     connect(m_toolsView, &QListView::clicked, this, &ToolsPage::handleViewClicked);
+    connect(m_toolsView, &QWidget::customContextMenuRequested, this, &ToolsPage::showMenu);
+}
+
+void ToolsPage::showMenu(QPoint point)
+{
+    QMenu menu(this);
+    QAction open(tr("Open"));
+    menu.addAction(&open);
+    menu.exec(QCursor::pos());
 }
 
 void ToolsPage::leaveEvent(QEvent *e)

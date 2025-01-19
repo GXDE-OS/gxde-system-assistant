@@ -15,6 +15,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *);
 
 private:
+    //void showMenu(QPoint);
     QModelIndex m_currentIndex;
 
 /* protected: */

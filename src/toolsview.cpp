@@ -1,6 +1,8 @@
 #include "toolsview.h"
 #include <QMouseEvent>
 #include <QEvent>
+#include <QMenu>
+#include <QDebug>
 
 ToolsView::ToolsView(QWidget *parent)
     : QListView(parent),
@@ -23,15 +25,11 @@ ToolsView::~ToolsView()
 {
 }
 
+
+
 void ToolsView::mouseMoveEvent(QMouseEvent *e)
 {
-    QModelIndex idx = indexAt(e->pos());
-
-    if (m_currentIndex != idx) {
-        m_currentIndex = idx;
-
-        emit entered(m_currentIndex);
-    }
+    QListView::mouseMoveEvent(e);
 }
 
 // bool ToolsView::eventFilter(QObject *object, QEvent *e)
