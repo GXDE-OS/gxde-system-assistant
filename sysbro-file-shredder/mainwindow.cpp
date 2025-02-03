@@ -72,6 +72,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_deleteBtn, &QPushButton::clicked, m_fileModel, &FileModel::removeAllFiles);
     connect(fileView, &FileView::removeItem, m_fileModel, &FileModel::removeItem);
     connect(addButton, &DLinkButton::clicked, this, &MainWindow::popupFileDialog);
+
+    setEnableWindowBackground(true);
 }
 
 MainWindow::~MainWindow()

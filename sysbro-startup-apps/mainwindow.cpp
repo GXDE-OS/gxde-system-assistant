@@ -76,6 +76,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_listView, &ListView::rightClicked, this, &MainWindow::popupRightMenu);
     connect(m_autoStartManager, &AutoStartManager::dataChanged, this, &MainWindow::checkAutoStartApp);
+
+    setEnableWindowBackground(true);
 }
 
 MainWindow::~MainWindow()

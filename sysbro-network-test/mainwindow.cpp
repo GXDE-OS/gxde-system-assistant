@@ -103,6 +103,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_networkManager, &NetworkManager::statusChanged, this, &MainWindow::updateStatus);
     connect(m_networkManager, &NetworkManager::testFailed, this, &MainWindow::switchToFailedPage);
     connect(m_networkManager, &NetworkManager::testSuccess, this, &MainWindow::handleSuccess);
+
+    setEnableWindowBackground(true);
 }
 
 MainWindow::~MainWindow()

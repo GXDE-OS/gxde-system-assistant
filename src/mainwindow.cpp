@@ -58,6 +58,8 @@ MainWindow::MainWindow(QWidget *parent)
         m_settings->setValue("tray_icon", enabled);
         initTrayIcon();
     });
+
+    setEnableWindowBackground(true);
 }
 
 MainWindow::~MainWindow()
