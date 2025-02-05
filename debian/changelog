@@ -1,8 +1,8 @@
-gxde-system-assistant (0.9.3) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.4) UNRELEASED; urgency=medium
 
-  * 新增支持设置背景图片标签
+  * 新增放大镜（kmag）入口
 
- -- gfdgd_xi <3025613752@qq.com>  Mon, 03 Feb 2025 22:49:38 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Wed, 05 Feb 2025 21:56:49 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节
