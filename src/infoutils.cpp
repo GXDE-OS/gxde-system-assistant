@@ -7,6 +7,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QtMath>
+#include <QProcessEnvironment>
+#include <QDateTime>
 
 infoUtils::infoUtils(QObject *parent) : QObject(parent)
 {
@@ -123,6 +125,30 @@ double infoUtils::autoRateUnits(long speed, infoUtils::RateUnit &unit)
 
 void infoUtils::uptime(double &run, double &idle)
 {
+    // 如果存在 /tmp/gxde-android/isAndroid 则优先读取
+    // /tmp/gxde-android/gxde-starting-time-$(whoami) 文件以解决 小小电脑/Termux 无法正常读取的问题
+    if (QFile::exists("/tmp/gxde-android/isAndroid")) {
+        QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+        QString androidPath = "/tmp/gxde-android/gxde-starting-time-" + env.value("USER");
+
+        QFile file(androidPath);
+        if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            return;
+        }
+        QTextStream stream(&file);
+        QString line = stream.readLine();
+        double startTime = line.toDouble();
+        // 计算时间差
+        double nowTime = QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000.0;
+        if (startTime > nowTime) {
+            // 排除异常情况
+            return;
+        }
+        run = nowTime - startTime;
+        idle = 0;
+        return;
+    }
+
     QFile file(PROC_UPTIME); // /proc/uptime
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return;

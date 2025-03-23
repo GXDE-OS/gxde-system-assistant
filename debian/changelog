@@ -1,9 +1,10 @@
-gxde-system-assistant (0.9.6) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.7) UNRELEASED; urgency=medium
 
   * 新增放大镜（kmag）入口
   * 新增系统运行时间显示
+  * 支持获取小小电脑/Termux 的桌面运行时间
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 23 Mar 2025 17:37:43 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 23 Mar 2025 23:07:33 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节

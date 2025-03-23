@@ -36,6 +36,9 @@ public:
     static QString sudoExec(const QString &cmd, QStringList args);
 
     static QList<int> getTaskPIDList();
+
+    static void getCpuTimeSys(unsigned long long &freq,
+                        unsigned long long &idle);
 };
 
 #endif // UTILS_H

@@ -10,10 +10,49 @@
 #include <QDebug>
 #include <QFile>
 #include <QDir>
+#include <QTimer>
+#include <QThread>
 
 Utils::Utils(QObject *parent) : QObject(parent)
 {
+}
 
+void Utils::getCpuTimeSys(unsigned long long &freq,
+                          unsigned long long &idle)
+{
+    long long totalFreq = 0;
+    long long totalIdle = 0;
+    QDir cpu("/sys/devices/system/cpu/");
+    if (!cpu.exists()) {
+        return;
+    }
+    cpu.setFilter(QDir::Dirs);
+    cpu.setSorting(QDir::Name);
+    for (auto i: cpu.entryList()) {
+        if (!QFile::exists("/sys/devices/system/cpu/" + i + "/cpufreq/stats/time_in_state")) {
+            continue;
+        }
+        QFile file("/sys/devices/system/cpu/" + i + "/cpufreq/stats/time_in_state");
+        file.open(QFile::ReadOnly);
+        for (auto j: QString(file.readAll()).split("\n")) {
+            QStringList lines = j.split(QRegularExpression(" "));
+            totalFreq += lines.at(1).toLongLong();
+        }
+        file.close();
+        QDir state("/sys/devices/system/cpu/" + i + "/cpuidle/");
+        state.setFilter(QDir::Dirs);
+        state.setSorting(QDir::Name);
+        for (auto j: state.entryList()) {
+            QFile stateFile ("/sys/devices/system/cpu/" + i + "/cpuidle/time");
+            if (stateFile.exists()) {
+                stateFile.open(QFile::ReadOnly);
+                totalIdle += QString(stateFile.readAll()).toLongLong();
+            }
+            stateFile.close();
+        }
+    }
+    freq = totalFreq;
+    idle = totalIdle;
 }
 
 QString Utils::getFileContent(const QString &path)
@@ -143,6 +182,16 @@ void Utils::getCpuInfo(QString &cpuModel, QString &cpuCore)
 
 void Utils::getCpuTime(unsigned long long &workTime, unsigned long long &totalTime)
 {
+    /*if (QFile::exists("/tmp/gxde-android/isAndroid")) {
+        unsigned long long oldIdle, oldFreq;
+        unsigned long long newIdle, newFreq;
+        getCpuTimeSys(oldFreq, oldIdle);
+        QThread::sleep(10);
+        getCpuTimeSys(newFreq, newIdle);
+        workTime = newFreq - oldFreq;
+        totalTime = workTime + (newIdle - oldIdle);
+        return;
+    }*/
     QFile file("/proc/stat");
     file.open(QIODevice::ReadOnly);
 
