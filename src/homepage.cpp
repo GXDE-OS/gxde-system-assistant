@@ -1,7 +1,11 @@
 #include "homepage.h"
 #include "utils.h"
 #include "widgets/horizontalseparator.h"
+#include "infoutils.h"
 #include <QFormLayout>
+#include <QtMath>
+#include <QLocale>
+#include <QTimer>
 
 HomePage::HomePage(QWidget *parent)
     : QWidget(parent),
@@ -27,6 +31,7 @@ HomePage::HomePage(QWidget *parent)
     m_kernel = new QLabel;
     m_cpuModel = new QLabel;
     m_cpuCoreCount = new QLabel;
+    m_uptime = new QLabel;
     m_networkInfo = new QLabel(tr("NETWORK"));
     m_uploadLabel = new QLabel("0.0 B/s");
     m_uploadTotalLabel = new QLabel;
@@ -42,7 +47,8 @@ HomePage::HomePage(QWidget *parent)
     systemInfoLayout->addWidget(m_kernel);
     systemInfoLayout->addWidget(m_cpuModel);
     systemInfoLayout->addWidget(m_cpuCoreCount);
-    systemInfoLayout->addStretch();
+    systemInfoLayout->addWidget(m_uptime);
+
 
     // network layout.
     QLabel *networkIcon = new QLabel;
@@ -121,6 +127,26 @@ void HomePage::stopMonitor()
     }
 }
 
+void HomePage::updateUptime()
+{
+    // 获取开机时间
+    double run,idle;
+    infoUtils::uptime(run,idle);
+    int time = qFloor(run);
+    int MM = (time % 3600) / 60;
+    int hh = (time % 86400) / 3600;
+    int dd = time / 86400;
+    int ss = time % 60;
+    QString uptime = QString::number(dd) + " day "
+            + QString("%1").arg(hh, 2, 10, QLatin1Char('0'))
+            + ":" + QString("%1").arg(MM, 2, 10, QLatin1Char('0'))
+            + ":" + QString("%1").arg(ss, 2, 10, QLatin1Char('0')) ;
+    if (QLocale::system().name() == "zh_CN") {
+        uptime = uptime.replace("day", "天");
+    }
+    m_uptime->setText(tr("Uptime: %1").arg(uptime));
+}
+
 void HomePage::initUI()
 {
     QString strCpuModel("");
@@ -133,6 +159,13 @@ void HomePage::initUI()
     m_kernel->setText(tr("Kernal Release: %1").arg(Utils::getKernel()));
     m_cpuModel->setText(tr("CPU Model: %1").arg(strCpuModel));
     m_cpuCoreCount->setText(tr("CPU Core: %1").arg(strCpuCore));
+    updateUptime();
+
+    // 设置 Timer 以定期刷新数据
+    QTimer *uptimeThread = new QTimer();
+    uptimeThread->setInterval(0.5 * 1000);
+    connect(uptimeThread, &QTimer::timeout, this, &HomePage::updateUptime);
+    uptimeThread->start();
 
     QFont font;
     font.setPointSize(18);

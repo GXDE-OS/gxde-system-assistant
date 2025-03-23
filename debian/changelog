@@ -1,8 +1,9 @@
-gxde-system-assistant (0.9.4) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.6) UNRELEASED; urgency=medium
 
   * 新增放大镜（kmag）入口
+  * 新增系统运行时间显示
 
- -- gfdgd_xi <3025613752@qq.com>  Wed, 05 Feb 2025 21:56:49 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 23 Mar 2025 17:37:43 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节

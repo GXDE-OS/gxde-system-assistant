@@ -62,84 +62,89 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../homepage.cpp" line="23"/>
+        <location filename="../homepage.cpp" line="27"/>
         <source>SYSTEM INFO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="30"/>
+        <location filename="../homepage.cpp" line="35"/>
         <source>NETWORK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="35"/>
+        <location filename="../homepage.cpp" line="40"/>
         <source>PROCESS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="36"/>
+        <location filename="../homepage.cpp" line="41"/>
         <source>Loadding...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="130"/>
+        <location filename="../homepage.cpp" line="143"/>
+        <source>Uptime: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="152"/>
         <source>Platform: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="131"/>
+        <location filename="../homepage.cpp" line="153"/>
         <source>Distribution: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="132"/>
+        <location filename="../homepage.cpp" line="154"/>
         <source>Startup time: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="133"/>
+        <location filename="../homepage.cpp" line="155"/>
         <source>Kernal Release: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="134"/>
+        <location filename="../homepage.cpp" line="156"/>
         <source>CPU Model: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="135"/>
+        <location filename="../homepage.cpp" line="157"/>
         <source>CPU Core: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="162"/>
-        <location filename="../homepage.cpp" line="175"/>
+        <location filename="../homepage.cpp" line="191"/>
+        <location filename="../homepage.cpp" line="204"/>
         <source>CPU Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="163"/>
+        <location filename="../homepage.cpp" line="192"/>
         <source>MEMORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="164"/>
+        <location filename="../homepage.cpp" line="193"/>
         <source>DISK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="177"/>
+        <location filename="../homepage.cpp" line="206"/>
         <source>CPU Busy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="201"/>
-        <location filename="../homepage.cpp" line="202"/>
+        <location filename="../homepage.cpp" line="230"/>
+        <location filename="../homepage.cpp" line="231"/>
         <source>total</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="207"/>
+        <location filename="../homepage.cpp" line="236"/>
         <source>%1 processes are running</source>
         <translation type="unfinished"></translation>
     </message>

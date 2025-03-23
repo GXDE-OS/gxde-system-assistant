@@ -26,6 +26,7 @@ private:
     void updateNetworkSpeed(QString upload, QString download);
     void updateNetworkTotal(QString upload, QString download);
     void updateProcessNumber(int num);
+    void updateUptime();
 
 private:
     QVBoxLayout *m_layout;
@@ -48,6 +49,7 @@ private:
     QLabel *m_downloadLabel;
     QLabel *m_processInfo;
     QLabel *m_allProcessLabel;
+    QLabel *m_uptime;
 };
 
 #endif // HOMEPAGE_H
