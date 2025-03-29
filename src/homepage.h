@@ -50,6 +50,7 @@ private:
     QLabel *m_processInfo;
     QLabel *m_allProcessLabel;
     QLabel *m_uptime;
+    QLabel *m_desktopProtocol;
 };
 
 #endif // HOMEPAGE_H

@@ -1,10 +1,12 @@
-gxde-system-assistant (0.9.7) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.8) UNRELEASED; urgency=medium
 
   * 新增放大镜（kmag）入口
   * 新增系统运行时间显示
   * 支持获取小小电脑/Termux 的桌面运行时间
+  * 新增显示桌面协议（x11/wayland）
+  * 新增用于执行 dpkg --configure -a 和 aptss install -f 的脚本
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 23 Mar 2025 23:07:33 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 29 Mar 2025 21:37:14 +0800
 
 gxde-system-assistant (0.8) unstable; urgency=medium
   * 修复细节

@@ -35,21 +35,30 @@ void Utils::getCpuTimeSys(unsigned long long &freq,
         QFile file("/sys/devices/system/cpu/" + i + "/cpufreq/stats/time_in_state");
         file.open(QFile::ReadOnly);
         for (auto j: QString(file.readAll()).split("\n")) {
-            QStringList lines = j.split(QRegularExpression(" "));
+            QStringList lines = j.split(" ");
+            if (lines.count() <= 1) {
+                continue;
+            }
             totalFreq += lines.at(1).toLongLong();
         }
         file.close();
         QDir state("/sys/devices/system/cpu/" + i + "/cpuidle/");
         state.setFilter(QDir::Dirs);
         state.setSorting(QDir::Name);
-        for (auto j: state.entryList()) {
-            QFile stateFile ("/sys/devices/system/cpu/" + i + "/cpuidle/time");
+        /*QFile stateFile ("/sys/devices/system/cpu/" + i + "/cpuidle/state0/time");
+        if (stateFile.exists()) {
+            stateFile.open(QFile::ReadOnly);
+            totalIdle += QString(stateFile.readAll()).toLongLong();
+        }
+        stateFile.close();*/
+        /*for (auto j: state.entryList()) {
+            QFile stateFile ("/sys/devices/system/cpu/" + i + "/cpuidle/" + j + "/time");
             if (stateFile.exists()) {
                 stateFile.open(QFile::ReadOnly);
                 totalIdle += QString(stateFile.readAll()).toLongLong();
             }
             stateFile.close();
-        }
+        }*/
     }
     freq = totalFreq;
     idle = totalIdle;
@@ -100,6 +109,12 @@ QString Utils::getPlatform()
     return QString("%1 %2")
            .arg(QSysInfo::kernelType())
            .arg(QSysInfo::currentCpuArchitecture());
+}
+
+QString Utils::getDesktopProtocol()
+{
+    auto env = QProcessEnvironment::systemEnvironment();
+    return env.value("XDG_SESSION_TYPE");
 }
 
 QString Utils::getDistribution()
@@ -182,14 +197,15 @@ void Utils::getCpuInfo(QString &cpuModel, QString &cpuCore)
 
 void Utils::getCpuTime(unsigned long long &workTime, unsigned long long &totalTime)
 {
-    /*if (QFile::exists("/tmp/gxde-android/isAndroid")) {
+    /*if (!QFile::exists("/tmp/gxde-android/isAndroid")) {
         unsigned long long oldIdle, oldFreq;
         unsigned long long newIdle, newFreq;
         getCpuTimeSys(oldFreq, oldIdle);
-        QThread::sleep(10);
+        QThread::msleep(10);
         getCpuTimeSys(newFreq, newIdle);
         workTime = newFreq - oldFreq;
         totalTime = workTime + (newIdle - oldIdle);
+        qDebug() << workTime << totalTime;
         return;
     }*/
     QFile file("/proc/stat");

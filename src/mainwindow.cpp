@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Sysbro");
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
-    setFixedSize(800, 560);
+    setFixedSize(800, 600);
     setWindowFlags( (windowFlags() | Qt::CustomizeWindowHint) & ~Qt::WindowMaximizeButtonHint); // https://segmentfault.com/q/1010000042762264 最大化按钮隐藏
     initTrayIcon();
     // setMinimumSize(800, 560);

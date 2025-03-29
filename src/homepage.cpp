@@ -27,11 +27,13 @@ HomePage::HomePage(QWidget *parent)
     m_systemInfo = new QLabel(tr("SYSTEM INFO"));
     m_platform = new QLabel;
     m_distribution = new QLabel;
+    m_desktopProtocol = new QLabel;
     m_bootTime = new QLabel;
     m_kernel = new QLabel;
     m_cpuModel = new QLabel;
     m_cpuCoreCount = new QLabel;
     m_uptime = new QLabel;
+
     m_networkInfo = new QLabel(tr("NETWORK"));
     m_uploadLabel = new QLabel("0.0 B/s");
     m_uploadTotalLabel = new QLabel;
@@ -43,6 +45,7 @@ HomePage::HomePage(QWidget *parent)
     systemInfoLayout->addWidget(m_systemInfo);
     systemInfoLayout->addWidget(m_platform);
     systemInfoLayout->addWidget(m_distribution);
+    systemInfoLayout->addWidget(m_desktopProtocol);
     systemInfoLayout->addWidget(m_bootTime);
     systemInfoLayout->addWidget(m_kernel);
     systemInfoLayout->addWidget(m_cpuModel);
@@ -155,6 +158,7 @@ void HomePage::initUI()
 
     m_platform->setText(tr("Platform: %1").arg(Utils::getPlatform()));
     m_distribution->setText(tr("Distribution: %1").arg(Utils::getDistribution()));
+    m_desktopProtocol->setText(tr("Desktop Protocol: %1").arg(Utils::getDesktopProtocol()));
     m_bootTime->setText(tr("Startup time: %1").arg(Utils::getBootTime()));
     m_kernel->setText(tr("Kernal Release: %1").arg(Utils::getKernel()));
     m_cpuModel->setText(tr("CPU Model: %1").arg(strCpuModel));

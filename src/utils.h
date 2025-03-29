@@ -15,6 +15,7 @@ public:
     static QPixmap renderSVG(const QString &path, const QSize &size);
     static QString getUserName();
     static QString getPlatform();
+    static QString getDesktopProtocol();
     static QString getDistribution();
     static QString getKernel();
     static QString getBootTime();
