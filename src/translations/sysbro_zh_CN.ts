@@ -75,84 +75,89 @@
         <translation type="vanished">下载</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="35"/>
+        <location filename="../homepage.cpp" line="37"/>
         <source>NETWORK</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="40"/>
+        <location filename="../homepage.cpp" line="42"/>
         <source>PROCESS</source>
         <translation>进程</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="41"/>
+        <location filename="../homepage.cpp" line="43"/>
         <source>Loadding...</source>
         <translation>加载中...</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="143"/>
+        <location filename="../homepage.cpp" line="150"/>
         <source>Uptime: %1</source>
         <translation>运行时间：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="152"/>
+        <location filename="../homepage.cpp" line="159"/>
         <source>Platform: %1</source>
         <translation>平台：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="153"/>
+        <location filename="../homepage.cpp" line="160"/>
         <source>Distribution: %1</source>
         <translation>发行版：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="154"/>
+        <location filename="../homepage.cpp" line="161"/>
+        <source>Desktop Protocol: %1</source>
+        <translation>桌面协议：%1</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="162"/>
         <source>Startup time: %1</source>
         <translation>开机时间：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="155"/>
+        <location filename="../homepage.cpp" line="163"/>
         <source>Kernal Release: %1</source>
         <translation>内核版本：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="156"/>
+        <location filename="../homepage.cpp" line="164"/>
         <source>CPU Model: %1</source>
         <translation>CPU 型号：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="157"/>
+        <location filename="../homepage.cpp" line="165"/>
         <source>CPU Core: %1</source>
         <translation>CPU 核数：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="191"/>
-        <location filename="../homepage.cpp" line="204"/>
+        <location filename="../homepage.cpp" line="199"/>
+        <location filename="../homepage.cpp" line="212"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="192"/>
+        <location filename="../homepage.cpp" line="200"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="193"/>
+        <location filename="../homepage.cpp" line="201"/>
         <source>DISK</source>
         <translation>磁盘容量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="206"/>
+        <location filename="../homepage.cpp" line="214"/>
         <source>CPU Busy</source>
         <translation>CPU 忙碌</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="230"/>
-        <location filename="../homepage.cpp" line="231"/>
+        <location filename="../homepage.cpp" line="238"/>
+        <location filename="../homepage.cpp" line="239"/>
         <source>total</source>
         <translation>总量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="236"/>
+        <location filename="../homepage.cpp" line="244"/>
         <source>%1 processes are running</source>
         <translation>%1 个进程正在运行</translation>
     </message>
