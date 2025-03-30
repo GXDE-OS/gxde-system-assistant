@@ -180,10 +180,12 @@ void HomePage::initUI()
     font.setPointSize(11);
     m_platform->setFont(font);
     m_distribution->setFont(font);
+    m_desktopProtocol->setFont(font);
     m_bootTime->setFont(font);
     m_kernel->setFont(font);
     m_cpuModel->setFont(font);
     m_cpuCoreCount->setFont(font);
+    m_uptime->setFont(font);
     m_uploadLabel->setFont(font);
     m_downloadLabel->setFont(font);
     m_allProcessLabel->setFont(font);
