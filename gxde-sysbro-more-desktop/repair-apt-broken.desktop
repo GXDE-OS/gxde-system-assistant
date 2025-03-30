@@ -2,11 +2,11 @@
 Categories=GNOME;GTK;DDE;Utility;System;TerminalEmulator;
 Comment=Use the command line
 Exec=gxde-terminal -e pkexec bash /usr/share/GXDE/gxde-system-assistant/repair-apt-broken.sh
-GenericName=Terminal 
+GenericName=Repair Dependency Broken
 Icon=gxde-terminal
 Keywords=shell;prompt;command;commandline;
-Name=Repair APT Broken
-Name[zh_CN]=修复系统软件安装器故障
+Name=Repair APT Dependency Broken
+Name[zh_CN]=修复依赖故障
 StartupNotify=true
 TryExec=gxde-terminal
 Type=Application
