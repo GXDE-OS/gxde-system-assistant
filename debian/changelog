@@ -1,9 +1,10 @@
-gxde-system-assistant (0.9.10) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.11) UNRELEASED; urgency=medium
 
   * 修改文案
   * 修复首页字体大小不一的问题
   * 新增显示桌面协议（x11/wayland）
   * 新增用于执行 dpkg --configure -a 和 aptss install -f 的脚本
+  * 修复在arm和龙芯无法显示CPU型号的问题
 
  -- gfdgd_xi <3025613752@qq.com>  Sun, 30 Mar 2025 08:48:24 +0800
 
