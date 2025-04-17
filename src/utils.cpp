@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "dtkcore_global.h"
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QApplication>
@@ -12,6 +13,9 @@
 #include <QDir>
 #include <QTimer>
 #include <QThread>
+#include "dsysinfo.h"
+
+DCORE_USE_NAMESPACE
 
 Utils::Utils(QObject *parent) : QObject(parent)
 {
@@ -159,35 +163,10 @@ QString Utils::getDebianVersion()
 
 void Utils::getCpuInfo(QString &cpuModel, QString &cpuCore)
 {
-    QFile file("/proc/cpuinfo");
 
-    // 确保文件可以正常打开
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        cpuModel.clear();
-        cpuCore.clear();
-        return;
-    }
 
-    QString buffer = file.readAll();
-    file.close();
-
-    QStringList model_line = buffer.split("\n").filter(QRegularExpression("^model name"));
-    QStringList core_line = buffer.split("\n");
-
-    // 安全地获取 model name，确保有匹配的内容
-    if (!model_line.isEmpty()) {
-        QStringList parts = model_line.first().split(":");
-        if (parts.size() > 1) {
-            cpuModel = parts.at(1).trimmed();  // 去除多余的空格
-        } else {
-            cpuModel.clear();
-        }
-    } else {
-        cpuModel.clear();
-    }
-
-    // 计算 CPU 核心数
-    int coreCount = core_line.filter(QRegularExpression("^processor")).count();
+    cpuModel =  DSysInfo::cpuModelName();
+    int coreCount = QThread::idealThreadCount();
     if (coreCount > 0) {
         cpuCore = QString::number(coreCount);
     } else {
