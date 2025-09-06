@@ -8,6 +8,11 @@ on:
       - "*"
 
 jobs:
-  call:
-    uses: GXDE-OS/GXDE/.github/workflows/building-deb.yml@master
+  call-zhuangzhuang:
+    uses: GXDE-OS/GXDE/.github/workflows/building-deb-zhuangzhuang.yml@master
     secrets: inherit
+  
+  call-hetao:
+    uses: GXDE-OS/GXDE/.github/workflows/building-deb-hetao.yml@master
+    secrets: inherit
+
