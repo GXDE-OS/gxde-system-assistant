@@ -1,5 +1,6 @@
 [Desktop Entry]
-Name=文件粉碎机
+Name=File Shredder
+Name[zh_CN]=文件粉碎机
 Exec=sysbro-file-shredder     
 Icon=sysbro-file-shredder
 Type=Application

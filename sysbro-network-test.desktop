@@ -1,5 +1,6 @@
 [Desktop Entry]
-Name=网络测速器
+Name=Network Speed Test
+Name[zh_CN]=网络测速器
 Exec=sysbro-network-test     
 Icon=sysbro-network-test
 Type=Application
