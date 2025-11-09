@@ -3,6 +3,7 @@
 #include <QEvent>
 #include <QMenu>
 #include <QDebug>
+#include <QScroller>
 
 ToolsView::ToolsView(QWidget *parent)
     : QListView(parent),
@@ -19,6 +20,9 @@ ToolsView::ToolsView(QWidget *parent)
     setFrameStyle(QFrame::NoFrame);
     setMouseTracking(true);
     setWrapping(true);
+
+    setVerticalScrollMode(QListView::ScrollPerPixel);
+    QScroller::grabGesture(this, QScroller::LeftMouseButtonGesture);
 }
 
 ToolsView::~ToolsView()

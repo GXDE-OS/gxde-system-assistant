@@ -9,6 +9,7 @@
 #include "cleanerpage.h"
 #include "speeduppage.h"
 #include "toolspage.h"
+#include "healthpage.h"
 #include "widgets/trayicon.h"
 
 DWIDGET_USE_NAMESPACE
@@ -35,6 +36,7 @@ private:
     HomePage *m_homePage;
     CleanerPage *m_cleanerPage;
     SpeedupPage *m_speedUpPage;
+    HealthPage *m_healthPage;
     ToolsPage *m_toolsPage;
     TrayIcon *m_trayIcon;
     QSettings *m_settings;

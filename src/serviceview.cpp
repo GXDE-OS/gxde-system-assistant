@@ -3,6 +3,7 @@
 #include <QHeaderView>
 #include <QMouseEvent>
 #include <QMenu>
+#include <QScroller>
 
 ServiceView::ServiceView(QWidget *parent)
     : QTreeView(parent)
@@ -16,6 +17,9 @@ ServiceView::ServiceView(QWidget *parent)
     setRootIsDecorated(false);
     setSortingEnabled(false);
     setAutoScroll(true);
+
+    setVerticalScrollMode(QTreeView::ScrollPerPixel);
+    QScroller::grabGesture(this, QScroller::LeftMouseButtonGesture);
 }
 
 void ServiceView::setModel(QAbstractItemModel *model)

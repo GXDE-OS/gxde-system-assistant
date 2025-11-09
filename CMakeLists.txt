@@ -35,6 +35,7 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
 find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5Gui REQUIRED)
+find_package(Qt5Charts REQUIRED)
 #find_package(Qt5Xdg REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(DtkCore REQUIRED)
@@ -46,6 +47,7 @@ add_executable(sysbro ${SRCS} src/resources.qrc)
 target_link_libraries(sysbro
     ${DtkWidget_LIBRARIES}
     ${DtkCore_LIBRARIES}
+    ${Qt5Charts_LIBRARIES}
     ${Qt5Widgets_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}

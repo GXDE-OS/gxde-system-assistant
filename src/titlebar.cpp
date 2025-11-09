@@ -18,6 +18,7 @@ TitleBar::TitleBar(QWidget *parent)
     tabbar->addTab(tr("Home"));
     tabbar->addTab(tr("Cleaner"));
     tabbar->addTab(tr("Speed up"));
+    //tabbar->addTab(tr("Health"));
     tabbar->addTab(tr("Tools"));
 
     m_layout->setMargin(0);

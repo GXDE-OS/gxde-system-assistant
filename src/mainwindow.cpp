@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_homePage(new HomePage),
       m_cleanerPage(new CleanerPage),
       m_speedUpPage(new SpeedupPage),
+      m_healthPage(new HealthPage),
       m_toolsPage(new ToolsPage),
       m_trayIcon(new TrayIcon),
       m_settings(new QSettings("sysbro")),
@@ -37,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_stackedLayout->addWidget(m_homePage);
     m_stackedLayout->addWidget(m_cleanerPage);
     m_stackedLayout->addWidget(m_speedUpPage);
+    //m_stackedLayout->addWidget(m_healthPage);
     m_stackedLayout->addWidget(m_toolsPage);
 
     m_trayIconAction->setCheckable(true);
