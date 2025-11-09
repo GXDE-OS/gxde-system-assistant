@@ -60,6 +60,45 @@
     </message>
 </context>
 <context>
+    <name>HealthPage</name>
+    <message>
+        <location filename="../healthpage.cpp" line="65"/>
+        <source>Total Time: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="70"/>
+        <source>Longest Used App: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="88"/>
+        <source> (Longest)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="97"/>
+        <source>Others</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="142"/>
+        <source>S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="146"/>
+        <location filename="../healthpage.cpp" line="150"/>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../healthpage.cpp" line="149"/>
+        <source>h</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HomePage</name>
     <message>
         <location filename="../homepage.cpp" line="27"/>
@@ -130,34 +169,34 @@
         <translation>CPU 核数：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="199"/>
-        <location filename="../homepage.cpp" line="212"/>
+        <location filename="../homepage.cpp" line="201"/>
+        <location filename="../homepage.cpp" line="214"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="200"/>
+        <location filename="../homepage.cpp" line="202"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="201"/>
+        <location filename="../homepage.cpp" line="203"/>
         <source>DISK</source>
         <translation>磁盘容量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="214"/>
+        <location filename="../homepage.cpp" line="216"/>
         <source>CPU Busy</source>
         <translation>CPU 忙碌</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="238"/>
-        <location filename="../homepage.cpp" line="239"/>
+        <location filename="../homepage.cpp" line="240"/>
+        <location filename="../homepage.cpp" line="241"/>
         <source>total</source>
         <translation>总量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="244"/>
+        <location filename="../homepage.cpp" line="246"/>
         <source>%1 processes are running</source>
         <translation>%1 个进程正在运行</translation>
     </message>
@@ -173,7 +212,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="16"/>
+        <location filename="../mainwindow.cpp" line="17"/>
         <source>Display tray icon</source>
         <translation>显示托盘图标</translation>
     </message>
@@ -261,12 +300,12 @@
 <context>
     <name>ServiceView</name>
     <message>
-        <location filename="../serviceview.cpp" line="49"/>
+        <location filename="../serviceview.cpp" line="53"/>
         <source>Disable</source>
         <translation>禁用</translation>
     </message>
     <message>
-        <location filename="../serviceview.cpp" line="49"/>
+        <location filename="../serviceview.cpp" line="53"/>
         <source>Enable</source>
         <translation>启用</translation>
     </message>
@@ -302,7 +341,7 @@
         <translation>优化加速</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="21"/>
+        <location filename="../titlebar.cpp" line="22"/>
         <source>Tools</source>
         <translation>工具箱</translation>
     </message>

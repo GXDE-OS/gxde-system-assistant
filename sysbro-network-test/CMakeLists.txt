@@ -33,5 +33,10 @@ target_link_libraries(sysbro-network-test
     ${Qt5Network_LIBRARIES}
 )
 
+file(GLOB QM_FILES "translations/*.qm")
+install(FILES ${QM_FILES}
+        DESTINATION share/sysbro-network-test/translations)
+
+
 install(TARGETS sysbro-network-test DESTINATION bin)
 

@@ -39,14 +39,14 @@ HomePage::HomePage(QWidget *parent)
     QPixmap splitPixmap = renderSVG(":/images/split_line.svg", QSize(214, 2));
     splitLine->setPixmap(splitPixmap);
 
-    DLinkButton *btn = new DLinkButton("立即测速");
-    QLabel *tipsLabel = new QLabel("测速前请关闭占用网络资源的软件");
+    DLinkButton *btn = new DLinkButton(tr("立即测速"));
+    QLabel *tipsLabel = new QLabel(tr("测速前请关闭占用网络资源的软件"));
 
-    m_comboBox->addItem("服务器1");
-    m_comboBox->addItem("服务器2");
-    m_comboBox->addItem("服务器3");
-    m_comboBox->addItem("服务器4（国外，国内可能无法连接）");
-    m_comboBox->addItem("服务器5（国外，国内可能无法连接）");
+    m_comboBox->addItem(tr("服务器1（百度）"));
+    m_comboBox->addItem(tr("服务器2（阿里）"));
+    m_comboBox->addItem(tr("服务器3（腾讯）"));
+    m_comboBox->addItem(tr("服务器4（Sourceforge）"));
+    m_comboBox->addItem(tr("服务器5（Github）"));
     m_comboBox->setFocusPolicy(Qt::NoFocus);
 
     if (m_settings->contains("server_index")) {
