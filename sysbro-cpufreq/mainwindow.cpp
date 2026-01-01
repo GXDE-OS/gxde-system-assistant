@@ -38,10 +38,10 @@ MainWindow::MainWindow(QWidget *parent)
     iconPixmap.setDevicePixelRatio(ratio);
 
     QLabel *iconLabel = new QLabel();
-    m_performanceMode = new QRadioButton("Performance Mode");
-    m_ondemandMode = new QRadioButton("On Demand Mode");
-    m_powersaveMode = new QRadioButton("Power Save Mode");
-    m_otherMode = new QRadioButton("Other Mode");
+    m_performanceMode = new QRadioButton(tr("高性能模式"));
+    m_ondemandMode = new QRadioButton(tr("平衡模式"));
+    m_powersaveMode = new QRadioButton(tr("节能模式"));
+    m_otherMode = new QRadioButton(tr("其它模式"));
 
     m_performanceMode->setDisabled(true);
     m_ondemandMode->setDisabled(true);
@@ -87,8 +87,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     setEnableWindowBackground(true);
 
-    setWindowTitle(tr("Power Plan"));
-    titlebar()->setTitle(tr("Power Plan"));
+    setWindowTitle(tr("电源计划"));
+    titlebar()->setTitle(tr("电源计划"));
     setWindowFlags(Qt::Dialog);
     setFixedSize(350, 420);
     setCentralWidget(centralWidget);
