@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/split_line.svg</file>
+        <file>images/success.svg</file>
+        <file>images/failed.svg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Power Plan
+Name[zh_CN]=电源计划
+Exec=sysbro-cpufreq
+Icon=gxde-system-monitor
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Utility;
+NoDisplay=true

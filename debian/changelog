@@ -1,11 +1,12 @@
-gxde-system-assistant (0.9.12) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.13) UNRELEASED; urgency=medium
 
   * 彩蛋改为花火以适配 GXDE 25
   * 工具箱新增硬件查看器快捷方式
   * 完善工具箱英化
   * 完善测速工具英化
+  * 新增电源计划设置功能
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 09 Nov 2025 16:31:34 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 01 Jan 2026 13:39:19 +0800
 
 gxde-system-assistant (0.9.11) UNRELEASED; urgency=medium
 

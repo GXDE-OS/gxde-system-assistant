@@ -61,6 +61,7 @@ add_subdirectory("sysbro-service-mgr")
 #add_subdirectory("sysbro-express")
 add_subdirectory("sysbro-file-shredder")
 add_subdirectory("sysbro-network-test")
+add_subdirectory("sysbro-cpufreq")
 add_subdirectory("sysbro-startup-apps")
 add_subdirectory("gxde-sysbro-more-desktop")
 
@@ -85,12 +86,14 @@ install(FILES sysbro.desktop DESTINATION share/applications)
 #install(FILES sysbro-express.desktop DESTINATION share/applications)
 install(FILES sysbro-file-shredder.desktop DESTINATION share/applications)
 install(FILES sysbro-network-test.desktop DESTINATION share/applications)
+install(FILES sysbro-cpufreq.desktop DESTINATION share/applications)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)
 
 #install(FILES sysbro-express.desktop DESTINATION share/gxde/gxde-system-assistant/tool-extensions)
 install(FILES sysbro-file-shredder.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 install(FILES sysbro-network-test.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
+install(FILES sysbro-cpufreq.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 
 # Install GXDE file
 
