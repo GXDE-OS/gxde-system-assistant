@@ -34,7 +34,7 @@ void NetworkManager::startTest(int server_index)
     switch (server_index) {
     case 0:
         // 百度服务器
-        m_realUrl = "https://imeres.baidu.com/imeres/ime-res/guanwang/img/Ubuntu_Deepin-fcitx-baidupinyin-64.zip";
+        m_realUrl = "https://ms2-gdown.baidu.com/appcenter/pkg/upload/inject/12447c4b715aa903775377865ee2df13?";
         break;
     case 1:
         // 阿里服务器
