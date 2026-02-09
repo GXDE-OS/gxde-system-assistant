@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
     a.loadTranslator();
     a.setOrganizationName("deepin");
-    a.setApplicationVersion(DApplication::buildVersion("1.0"));
+    a.setApplicationVersion(DApplication::buildVersion("0.9.14"));
     a.setApplicationAcknowledgementPage("https://gitee.com/shenmo7192/");
     a.setProductIcon(QIcon(":/resources/sysbro.svg"));
-    a.setProductName("Sysbro");
-    a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more...")
+    a.setProductName("GXDE System Assistant");
+    a.setApplicationDescription(DApplication::translate("Main", "GXDE System Assistant is a system assistant that monitors CPU, memory and more...")
                                 + "                                                                                                             ");
 
     if (!a.setSingleInstance("assistant")) {

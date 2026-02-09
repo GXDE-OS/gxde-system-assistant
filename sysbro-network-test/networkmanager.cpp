@@ -34,7 +34,7 @@ void NetworkManager::startTest(int server_index)
     switch (server_index) {
     case 0:
         // 百度服务器
-        m_realUrl = "https://47d25d-1905179964.antpcdn.com:19001/b/pkg-ant.baidu.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.44.6.1.exe";
+        m_realUrl = "https://ms2-gdown.baidu.com/appcenter/pkg/upload/inject/12447c4b715aa903775377865ee2df13?";
         break;
     case 1:
         // 阿里服务器
