@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
     a.loadTranslator();
     a.setOrganizationName("GXDE");
-    a.setApplicationVersion(DApplication::buildVersion("1.0"));
+    a.setApplicationVersion(DApplication::buildVersion("1.1"));
     a.setApplicationAcknowledgementPage("https://github.com/rekols");
     a.setProductIcon(QIcon(":/images/icon.svg"));
     a.setProductName(DApplication::translate("Main", "网络测速"));

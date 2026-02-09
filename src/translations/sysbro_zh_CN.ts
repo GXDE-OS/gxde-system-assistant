@@ -204,9 +204,13 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../main.cpp" line="20"/>
         <source>Sysbro is a system assistant that monitors CPU, memory and more...</source>
-        <translation>Sysbro 是一款系统助手，可以监控 CPU，内存等等...</translation>
+        <translation type="vanished">Sysbro 是一款系统助手，可以监控 CPU，内存等等...</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="20"/>
+        <source>GXDE System Assistant is a system assistant that monitors CPU, memory and more...</source>
+        <translation>GXDE 系统助手是一款系统助手，可以监控 CPU，内存等等...</translation>
     </message>
 </context>
 <context>

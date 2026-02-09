@@ -8,6 +8,7 @@ install(FILES dde-control-center.desktop DESTINATION share/GXDE/gxde-system-assi
 install(FILES gxde-terminal.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 install(FILES org.kde.kmag.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 install(FILES spark-store.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
+install(FILES gxde-hardware-viewer.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 
 install(FILES repair-apt-broken.desktop DESTINATION share/GXDE/gxde-system-assistant/tool-extensions)
 install(FILES repair-apt-broken.sh DESTINATION share/GXDE/gxde-system-assistant/)

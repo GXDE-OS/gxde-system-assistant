@@ -17,4 +17,5 @@ Recommends:
  gxde-kernel-manager,
  gxde-easteregg-sparkle,
  gxde-autotrash,
+ kmag
 Description: Sysbro is a system assistant for GXDE.
