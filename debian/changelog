@@ -1,11 +1,11 @@
-gxde-system-assistant (0.9.14) UNRELEASED; urgency=medium
+gxde-system-assistant (0.9.15) UNRELEASED; urgency=medium
 
   * 修复工具箱无硬件查看器问题
   * 添加推荐依赖修复工具箱无放大镜问题
   * 修改关于界面软件名称及软件介绍
   * 修复测速工具中百度服务器失效无法正常测速问题
 
- -- zeqi <a202128502@163.com>  Mon, 09 Feb 2026 18:00:30 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 04 Apr 2026 20:57:29 +0800
 
 gxde-system-assistant (0.9.13) UNRELEASED; urgency=medium
 
