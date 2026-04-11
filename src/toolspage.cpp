@@ -91,7 +91,7 @@ void ToolsPage::handleViewClicked(QModelIndex idx)
     QStringList args = parts;
 
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-    env.insert("QT_QPA_PLATFORM", "dxcb;xcb");
+    env.insert("QT_QPA_PLATFORM", "dxcb;xcb;dwayland");
 
     QProcess process;
     process.setProgram(program);
