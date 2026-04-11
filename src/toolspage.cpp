@@ -67,10 +67,39 @@ bool ToolsPage::sendFileToDesktop(QModelIndex idx)
     return QFile::copy(desktopFilePath, desktopPath + "/" + desktopFileInfo.fileName());
 }
 
-void ToolsPage::handleViewClicked(QModelIndex idx)
+/*void ToolsPage::handleViewClicked(QModelIndex idx)
 {
     // startup application.
     QString appExec = idx.data(ToolsListModel::AppKeyRole).toString();
     qDebug() << appExec;
     QProcess::startDetached(appExec);
+}*/
+
+void ToolsPage::handleViewClicked(QModelIndex idx) 
+{
+    //修复打开从工具箱打开的应用UI显示异常的问题
+    // startup application.
+    QString appExec = idx.data(ToolsListModel::AppKeyRole).toString();
+    qDebug() << appExec;
+    if (appExec.isEmpty())
+        return;
+
+    QStringList parts = QProcess::splitCommand(appExec);
+    if (parts.isEmpty())
+        return;
+    QString program = parts.takeFirst();
+    QStringList args = parts;
+
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert("QT_QPA_PLATFORM", "dxcb;xcb;dwayland");
+
+    QProcess process;
+    process.setProgram(program);
+    process.setArguments(args);
+    process.setProcessEnvironment(env);
+    
+    qint64 pid;
+    if (!process.startDetached(&pid)) {
+        qWarning() << "Failed to start:" << program;
+    }
 }
