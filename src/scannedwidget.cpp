@@ -101,7 +101,7 @@ void ScannedWidget::addTreeChild(const ScannedWidget::Categories categories, con
 
 void ScannedWidget::start()
 {
-    QtConcurrent::run(this, &ScannedWidget::scan);
+    QtConcurrent::run(&ScannedWidget::scan, this);
 }
 
 void ScannedWidget::scan()
@@ -127,7 +127,7 @@ void ScannedWidget::scan()
 
 void ScannedWidget::clear()
 {
-    QtConcurrent::run(this, &ScannedWidget::systemClear);
+    QtConcurrent::run(&ScannedWidget::systemClear, this);
 }
 
 void ScannedWidget::systemClear()

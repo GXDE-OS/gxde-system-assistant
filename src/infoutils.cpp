@@ -9,6 +9,7 @@
 #include <QtMath>
 #include <QProcessEnvironment>
 #include <QDateTime>
+#include <QRegularExpression>
 
 infoUtils::infoUtils(QObject *parent) : QObject(parent)
 {
@@ -156,7 +157,7 @@ void infoUtils::uptime(double &run, double &idle)
 
     QTextStream stream(&file);
     QString line = stream.readLine();
-    QStringList list = line.split(QRegExp("\\s{1,}"));
+    QStringList list = line.split(QRegularExpression("\\s{1,}"));
     if(!list.isEmpty()) {
         run = list.at(0).toDouble();
         idle = list.at(1).toDouble();
@@ -179,7 +180,7 @@ void infoUtils::netRate(long &netDown, long &netUpload)
     line  = stream.readLine();
     while (!line.isNull()) {
         line = line.trimmed();
-        QStringList list = line.split(QRegExp("\\s{1,}"));   // 匹配任意 大于等于1个的 空白字符
+        QStringList list = line.split(QRegularExpression("\\s{1,}"));   // 匹配任意 大于等于1个的 空白字符
 
         if (!list.isEmpty()) {
             down = list.at(1).toLong();
@@ -207,7 +208,7 @@ void infoUtils::cpuRate(long &cpuAll, long &cpuFree)
     QTextStream stream(&file);
     QString line = stream.readLine();
     if (!line.isNull()) {
-        QStringList list = line.split(QRegExp("\\s{1,}"));
+        QStringList list = line.split(QRegularExpression("\\s{1,}"));
         for (auto v = list.begin() + 1; v != list.end(); ++v)
             cpuAll += (*v).toLong(&ok);
 
@@ -231,7 +232,7 @@ void infoUtils::memoryRate(long &memory, long &memoryAll, long &swap, long &swap
     long buff[16] = {0};
     for (int i = 0; i <= 15; ++i) {
         QString line = stream.readLine();
-        QStringList list = line.split(QRegExp("\\s{1,}"));
+        QStringList list = line.split(QRegularExpression("\\s{1,}"));
         buff[i] = list.at(1).toLong(&ok);
     }
 

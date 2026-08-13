@@ -14,7 +14,7 @@ public:
     QString exec;
     QString filePath;
 
-    inline bool operator==(const DesktopInfo &other) {
+    inline bool operator==(const DesktopInfo &other) const {
         return filePath == other.filePath;
     }
 };

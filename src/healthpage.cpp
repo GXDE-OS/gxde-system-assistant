@@ -4,6 +4,7 @@
 #include <QVBoxLayout>
 #include <QJsonObject>
 #include <QScroller>
+#include <QFile>
 
 HealthPage::HealthPage(QWidget *parent)
     : QScrollArea(parent),
@@ -11,8 +12,8 @@ HealthPage::HealthPage(QWidget *parent)
     m_totalTime(new QLabel),
     m_longestUsedApp(new QLabel),
     m_appInfo(new QLabel),
-    m_timeChartView(new QtCharts::QChartView),
-    m_timePieSeries(new QtCharts::QPieSeries),
+    m_timeChartView(new QChartView),
+    m_timePieSeries(new QPieSeries),
     m_appUsedTimeView(new QGridLayout)
 
 {
@@ -43,9 +44,9 @@ HealthPage::HealthPage(QWidget *parent)
 
 void HealthPage::initChart()
 {
-    QtCharts::QChart *chart = m_timeChartView->chart();
+    QChart *chart = m_timeChartView->chart();
     for (int i = 0; i < 9; ++i) {
-        QtCharts::QPieSlice *pie_slice = new QtCharts::QPieSlice(this);
+        QPieSlice *pie_slice = new QPieSlice(this);
         pie_slice->setLabelVisible(false);
         m_timePieSliceList.append(pie_slice);
         m_timePieSeries->append(pie_slice);
@@ -55,7 +56,7 @@ void HealthPage::initChart()
     chart->setMargins(QMargins(0, 0, 0, 0));
     chart->addSeries(m_timePieSeries);
 
-    connect(m_timePieSeries, &QtCharts::QPieSeries::clicked, this, &HealthPage::onPieSeriesClicked);
+    connect(m_timePieSeries, &QPieSeries::clicked, this, &HealthPage::onPieSeriesClicked);
 
     m_timeChartView->setRenderHint(QPainter::Antialiasing);
 }
@@ -77,7 +78,12 @@ void HealthPage::refreshCharts()
     // 计算饼图
     // 加载数据
     QJsonArray json = HealthPageModel::getPerAppStatJson();
-    for (int i = 0; i < m_timePieSliceList.count() - 1; ++i) {
+    const int sliceCount = m_timePieSliceList.count();
+    const int dataCount = json.count();
+    for (int i = 0; i < sliceCount - 1 && i < dataCount; ++i) {
+        if (!json[i].isObject()) {
+            continue;
+        }
         QJsonObject object = json[i].toObject();
         int time = object["time"].toInt();
         QString name = object["name"].toString();
@@ -90,7 +96,10 @@ void HealthPage::refreshCharts()
     }
     // 计算 Others
     int otherTotalTime = 0;
-    for (int i = m_timePieSliceList.count(); i < json.count(); ++i) {
+    for (int i = sliceCount; i < dataCount; ++i) {
+        if (!json[i].isObject()) {
+            continue;
+        }
         QJsonObject object = json[i].toObject();
         otherTotalTime += object["time"].toInt();
     }
@@ -104,6 +113,9 @@ void HealthPage::refreshCharts()
         i->setVisible(false);
     }
     for (int i = 0; i < json.count(); ++i) {
+        if (!json[i].isObject()) {
+            continue;
+        }
         QJsonObject object = json[i].toObject();
         int time = object["time"].toInt();
         QString name = object["name"].toString();
@@ -150,7 +162,7 @@ QString HealthPage::secondToTimeText(int second)
            QString::number(int(second / 60 % 60)) + tr("min");
 }
 
-void HealthPage::onPieSeriesClicked(QtCharts::QPieSlice *slice)
+void HealthPage::onPieSeriesClicked(QPieSlice *slice)
 {
     for (auto i: m_timePieSliceList) {
         i->setExploded(false);

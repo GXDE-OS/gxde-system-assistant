@@ -49,7 +49,7 @@ const QMap<QString, QString> descriptions = {
 ServiceModel::ServiceModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
-    QtConcurrent::run(this, &ServiceModel::loadServices);
+    QtConcurrent::run(&ServiceModel::loadServices, this);
 }
 
 void ServiceModel::loadServices()

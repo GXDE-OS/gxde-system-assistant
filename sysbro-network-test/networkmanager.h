@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QNetworkAccessManager>
+#include <QElapsedTimer>
 
 class NetworkManager : public QObject
 {
@@ -26,7 +27,7 @@ private:
     QNetworkAccessManager *m_networkManager;
     QNetworkReply *m_realReply;
     QList<qint64> m_speedList;
-    QTime m_downloadTime;
+    QElapsedTimer m_downloadTime;
     QString m_realUrl;
 };
 

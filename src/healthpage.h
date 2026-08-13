@@ -7,6 +7,13 @@
 #include <QPieSeries>
 #include <QListWidget>
 #include <QGridLayout>
+#include <QScrollArea>
+
+// Qt6 中 QtCharts 的类不再位于 QtCharts 命名空间下
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+namespace QtCharts {}
+#endif
+using namespace QtCharts;
 
 class HealthPage : public QScrollArea
 {
@@ -18,7 +25,7 @@ private:
     void refresh();
     void refreshCharts();
     void initChart();
-    void onPieSeriesClicked(QtCharts::QPieSlice *slice);
+    void onPieSeriesClicked(QPieSlice *slice);
     QString secondToTimeText(int second);
 
     QWidget *m_mainWidget;
@@ -26,9 +33,9 @@ private:
     QLabel *m_longestUsedApp;
     QLabel *m_appInfo;
     QGridLayout *m_appUsedTimeView;
-    QtCharts::QChartView *m_timeChartView;
-    QtCharts::QPieSeries *m_timePieSeries;
-    QList<QtCharts::QPieSlice *> m_timePieSliceList;
+    QChartView *m_timeChartView;
+    QPieSeries *m_timePieSeries;
+    QList<QPieSlice *> m_timePieSliceList;
     //QList<QListWidgetItem *> m_appUsedTimeViewItemList;
     QList<QLabel *> m_appUsedTimeViewItemList;
     QList<QLabel *> m_appUsedTimeViewTimeItemList;

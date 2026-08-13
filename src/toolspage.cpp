@@ -13,7 +13,7 @@ ToolsPage::ToolsPage(QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(m_toolsView);
-    layout->setMargin(20);
+    layout->setContentsMargins(20, 20, 20, 20);
 
     // m_toolsView->setViewMode(QListView::IconMode);
     m_toolsView->setItemDelegate(new ToolsItemDelegate);

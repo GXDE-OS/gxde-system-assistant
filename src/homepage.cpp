@@ -71,13 +71,13 @@ HomePage::HomePage(QWidget *parent)
 
     QWidget *uploadWidget = new QWidget;
     QHBoxLayout *uploadLayout = new QHBoxLayout(uploadWidget);
-    uploadLayout->setMargin(0);
+    uploadLayout->setContentsMargins(0, 0, 0, 0);
     uploadLayout->addWidget(uploadIcon);
     uploadLayout->addWidget(m_uploadLabel);
 
     QWidget *downloadWidget = new QWidget;
     QHBoxLayout *downloadLayout = new QHBoxLayout(downloadWidget);
-    downloadLayout->setMargin(0);
+    downloadLayout->setContentsMargins(0, 0, 0, 0);
     downloadLayout->addWidget(downloadIcon);
     downloadLayout->addWidget(m_downloadLabel);
 

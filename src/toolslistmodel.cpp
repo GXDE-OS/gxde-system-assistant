@@ -1,6 +1,6 @@
 #include "toolslistmodel.h"
 #include <QLocale>
-#include <qt5xdg/xdgdesktopfile.h>
+#include <xdgdesktopfile.h>
 #include <QCoreApplication>
 #include <QDir>
 //#include <XdgDesktopFile>

@@ -2,7 +2,18 @@ Source: gxde-system-assistant
 Section: utils
 Priority: optional
 Maintainer: Rekols <rekols@foxmail.com>
-Build-Depends: debhelper (>= 9), cmake, pkg-config, libqt5widgets5, libdtkcore-dev | libdtkcore2-dev, libdtkwidget2-dev, qt5-default | qtchooser, qttools5-dev-tools, libqt5xdg-dev, libqt5charts5-dev
+Build-Depends: debhelper (>= 9),
+ cmake,
+ pkg-config,
+ qt6-base-dev,
+ qt6-base-dev-tools,
+ qt6-tools-dev,
+ qt6-tools-dev-tools,
+ qt6-l10n-tools,
+ qt6-charts-dev,
+ libqt6xdg-dev,
+ libdtk6core-dev,
+ libdtk2widget6-dev
 Standards-Version: 3.9.8
 Homepage: https://gitee.com/GXDE-OS/gxde-system-assistant
 

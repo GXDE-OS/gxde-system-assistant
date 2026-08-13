@@ -7,7 +7,8 @@ endif ()
 project(sysbro)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -31,27 +32,31 @@ file(GLOB SRCS "src/*.h" "src/*.cpp"
 
 # Find the library
 find_package(PkgConfig REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5DBus REQUIRED)
-find_package(Qt5Concurrent REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Charts REQUIRED)
-#find_package(Qt5Xdg REQUIRED)
-find_package(DtkWidget REQUIRED)
-find_package(DtkCore REQUIRED)
-PKG_SEARCH_MODULE(Qt5Xdg REQUIRED Qt5Xdg)
+find_package(Qt6 REQUIRED COMPONENTS Widgets DBus Concurrent Gui Charts)
+# 使用 dtk2widget（DTK2 API 的 Qt6 版本），而非 dtk6widget
+PKG_SEARCH_MODULE(Dtk2Widget REQUIRED dtk2widget)
+PKG_SEARCH_MODULE(Qt6Xdg REQUIRED Qt6Xdg)
 
 # Tell CMake to create the executable
 add_executable(sysbro ${SRCS} src/resources.qrc)
 
+target_include_directories(sysbro PRIVATE
+    ${Dtk2Widget_INCLUDE_DIRS}
+    ${Qt6Xdg_INCLUDE_DIRS}
+)
+target_compile_options(sysbro PRIVATE ${Dtk2Widget_CFLAGS_OTHER})
+target_link_directories(sysbro PRIVATE
+    ${Dtk2Widget_LIBRARY_DIRS}
+    ${Qt6Xdg_LIBRARY_DIRS}
+)
+
 target_link_libraries(sysbro
-    ${DtkWidget_LIBRARIES}
-    ${DtkCore_LIBRARIES}
-    ${Qt5Charts_LIBRARIES}
-    ${Qt5Widgets_LIBRARIES}
-    ${Qt5DBus_LIBRARIES}
-    ${Qt5Concurrent_LIBRARIES}
-    ${Qt5Xdg_LIBRARIES}
+    ${Dtk2Widget_LIBRARIES}
+    Qt6::Charts
+    Qt6::Widgets
+    Qt6::DBus
+    Qt6::Concurrent
+    ${Qt6Xdg_LIBRARIES}
 )
 
 set(CMAKE_INSTALL_PREFIX /usr)
