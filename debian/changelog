@@ -1,4 +1,4 @@
-gxde-system-assistant (1.0.0) UNRELEASED; urgency=medium
+gxde-system-assistant (1.0.1) UNRELEASED; urgency=medium
 
   * 修复工具箱无硬件查看器问题
   * 添加推荐依赖修复工具箱无放大镜问题
@@ -6,8 +6,9 @@ gxde-system-assistant (1.0.0) UNRELEASED; urgency=medium
   * 修复测速工具中百度服务器失效无法正常测速问题
   * 修复打开从工具箱打开的应用UI显示异常的问题
   * 迁移至 Qt6
+  * 移除包 kmag
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 13 Aug 2026 22:13:55 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Fri, 14 Aug 2026 21:58:31 +0800
 
 gxde-system-assistant (0.9.13) UNRELEASED; urgency=medium
 
