@@ -1,0 +1,32 @@
+# Maintainer: CharOfString <root@charofstring.cc>
+pkgname=gxde-system-assistant-git
+pkgver=1.0.1
+pkgrel=1
+pkgdesc='Sysbro, the system assistant for GXDE'
+arch=('x86_64' 'aarch64')
+url="https://github.com/GXDE-OS/gxde-system-assistant"
+license=('GPL-3.0-or-later')
+# 服务管理与文件删除通过 pkexec 和 systemctl 执行 ・ Service management and file deletion go through pkexec and systemctl.
+depends=('dtk2widget-qt6-git' 'dtk6core-git' 'qt6-base' 'qt6-charts' 'libqtxdg' 'polkit' 'systemd' 'hicolor-icon-theme'
+         'libgcc' 'libstdc++' 'glibc')
+makedepends=('git' 'cmake' 'ninja' 'pkgconf' 'qt6-tools')
+provides=('gxde-system-assistant')
+conflicts=('gxde-system-assistant')
+source=()
+sha512sums=()
+
+# 直接使用 PKGBUILD 所在的 git 仓库作为源码 ・ Build from the git checkout this PKGBUILD lives in.
+_srcroot() {
+  git -C "$startdir" rev-parse --show-toplevel
+}
+
+build() {
+  cmake -B build -S "$(_srcroot)" -GNinja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  ninja -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+}
