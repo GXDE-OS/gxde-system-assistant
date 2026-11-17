@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=gxde-system-assistant-git
+pkgname=gxde-system-assistant
 pkgver=1.0.1
 pkgrel=1
 pkgdesc='Sysbro, the system assistant for GXDE'
@@ -7,11 +7,12 @@ arch=('x86_64' 'aarch64')
 url="https://github.com/GXDE-OS/gxde-system-assistant"
 license=('GPL-3.0-or-later')
 # 服务管理与文件删除通过 pkexec 和 systemctl 执行 ・ Service management and file deletion go through pkexec and systemctl.
-depends=('dtk2widget-qt6-git' 'dtk6core-git' 'qt6-base' 'qt6-charts' 'libqtxdg' 'polkit' 'systemd' 'hicolor-icon-theme'
+depends=('dtk2widget-qt6' 'gxde-dtk6core' 'qt6-base' 'qt6-charts' 'libqtxdg' 'polkit' 'systemd' 'hicolor-icon-theme'
          'libgcc' 'libstdc++' 'glibc')
 makedepends=('git' 'cmake' 'ninja' 'pkgconf' 'qt6-tools')
-provides=('gxde-system-assistant')
-conflicts=('gxde-system-assistant')
+provides=("gxde-system-assistant-git=$pkgver")
+conflicts=('gxde-system-assistant-git')
+replaces=('gxde-system-assistant-git')
 source=()
 sha512sums=()
 
